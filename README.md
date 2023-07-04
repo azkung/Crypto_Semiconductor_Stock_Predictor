@@ -5,3 +5,11 @@ Many claim that the value of semiconductor company stock is partially dependent 
 The following respository is a time-series LSTM model that predicts the stock price of Nvidia from the time-series data of its own stock, but of popular cryptocurrencies as well.
 
 ## Results
+
+![Train-results] (results/train_scaled.png)
+
+![Test-results] (results/test_scaled.png)
+
+![Predictions] (results/test_unscaled.png)
+
+![Simulation] (results/simulation.png)
