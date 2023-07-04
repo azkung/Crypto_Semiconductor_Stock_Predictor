@@ -1,6 +1,6 @@
 {
     "lookback" : 30,
-    "train_percent" : 0.9,
+    "train_percent" : 0.8,
 
     "optimizer" : "adam",
     "momentum" : 0.9,
