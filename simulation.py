@@ -113,3 +113,6 @@ with open('results/final_stats.txt', 'w') as f:
     f.write('\n')
     f.write("Percent Increase: " + str(((money-principal)/principal)*100))
     f.write('\n')
+    f.write("Time Period: " + str(len(y)))
+    f.write('\n')
+

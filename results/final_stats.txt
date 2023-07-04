@@ -1,3 +1,4 @@
 Principal: 1000
 Final: 2331.392402174885
 Percent Increase: 133.1392402174885
+Time Period: 186
