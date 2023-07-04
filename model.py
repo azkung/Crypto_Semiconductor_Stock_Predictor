@@ -43,8 +43,8 @@ class LSTM2(nn.Module):
         self.lstm2 = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
         
         self.linear1 = nn.Linear(2*hidden_size, hidden_size)
-        self.leakyrelu = nn.LeakyReLU() 
         self.linear2 = nn.Linear(hidden_size, 1)
+
     
     def forward(self, input_seq1, input_seq2):
         h0 = torch.zeros(self.num_layers, input_seq1.size(0), self.hidden_size).to(device)
@@ -59,7 +59,7 @@ class LSTM2(nn.Module):
         lstm_out = torch.cat((lstm_out1[:, -1, :], lstm_out2[:, -1, :]), dim=1)
 
         predictions = self.linear1(lstm_out)
-        predictions = self.leakyrelu(predictions)
+        predictions = F.leaky_relu(predictions)
         predictions = self.linear2(predictions)
         
         return predictions

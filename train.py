@@ -6,6 +6,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 import json
 from model import LSTM1, LSTM2
+import os
 
 def main():
     with open('config.json') as f:
@@ -22,6 +23,10 @@ def main():
     momentum = config['momentum']
 
     optimizer = config['optimizer']
+
+    # check if weights folder exists
+    if not os.path.exists('weights'):
+        os.makedirs('weights')
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 

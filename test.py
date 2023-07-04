@@ -56,6 +56,7 @@ plt.legend()
 plt.title('Train')
 plt.show()
 
+loss_function = nn.MSELoss(reduction='mean')
 
 with torch.no_grad():
     for i, (X1, X2, y) in enumerate(test_dataloader):
@@ -63,9 +64,12 @@ with torch.no_grad():
         X2 = X2.reshape(-1, n_steps, 1).to(device)
         y_pred = model(X1, X2)
         y = y.reshape(-1, 1).to(device)
+        loss = loss_function(y_pred, y)
+
 
 print(y_pred.shape)
 print(y.shape)
+print(loss)
 
 y_pred = y_pred.cpu().numpy()
 y = y.cpu().numpy()

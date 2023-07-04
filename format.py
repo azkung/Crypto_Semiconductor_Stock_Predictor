@@ -78,13 +78,7 @@ def main():
 
     print(X1)
     print(X2)
-
-    scalerX1 = MinMaxScaler(feature_range=(-1, 1))
-    scalerX2 = MinMaxScaler(feature_range=(-1, 1))
-
-    X1 = scalerX1.fit_transform(X1)
-    X2 = scalerX2.fit_transform(X2)
-    y = scalerX1.fit_transform(y.reshape(-1, 1))
+    print(y)
 
 
     print(X1.shape, X2.shape, y.shape)
@@ -104,8 +98,8 @@ def main():
     torch.save(test_dataset, 'formatted/test_dataset.pt')
 
     # save scaler
-    joblib.dump(scalerX1, 'formatted/scalerX1.pkl') # NVDA
-    joblib.dump(scalerX2, 'formatted/scalerX2.pkl') # BTC
+    joblib.dump(NVDA_Scaler, 'formatted/NVDA_Scaler.pkl') # NVDA
+    joblib.dump(BTC_Scaler, 'formatted/BTC_Scaler.pkl') # BTC
 
 
 if __name__ == '__main__':

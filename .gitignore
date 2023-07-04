@@ -2,4 +2,4 @@ formatted/
 datasets/
 venv/
 weights/
-pycache/
+__pycache__/
