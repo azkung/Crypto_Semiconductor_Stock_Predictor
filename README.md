@@ -13,3 +13,22 @@ The following repository is a time-series LSTM model that predicts the stock pri
 ![Predictions](https://github.com/azkung/Crypto_Semiconductor_Stock_Predictor/blob/main/results/test_unscaled.png)
 
 ![Simulation](https://github.com/azkung/Crypto_Semiconductor_Stock_Predictor/blob/main/results/simulation.png)
+
+## Installation
+
+'''bash
+pip install -r requirements.txt
+'''
+
+Must perform a local installation of pytorch
+
+## Usage
+
+Edit config file to change hyperparameters. Also add the nvidia and crypto data to the datasets folder. The format script uses the yahoo finance csv format.
+
+'''bash
+python format.py
+python train.py
+python test.py
+python simulation.py
+'''
