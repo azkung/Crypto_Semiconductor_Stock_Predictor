@@ -10,18 +10,18 @@ import matplotlib.pyplot as plt
 import joblib
 import numpy as np
 from copy import deepcopy as dc
+import os
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+if not os.path.exists('results'):
+    os.makedirs('results')
 
 with open('config.json') as f:
     config = json.load(f)
 
 hidden_size = config['hidden_size']
 num_layers = config['num_layers']
-
-
-with open('config.json') as f:
-    config = json.load(f)
 
 batch_size = config['batch_size']
 n_steps = config['lookback']
@@ -57,6 +57,7 @@ plt.plot(y, label='Actual')
 plt.plot(y_pred, label='Predicted')
 plt.legend()
 plt.title('Train')
+plt.savefig('results/train_scaled.png')
 plt.show()
 
 loss_function = nn.MSELoss(reduction='mean')
@@ -84,6 +85,7 @@ plt.plot(y, label='Actual')
 plt.plot(y_pred, label='Predicted')
 plt.legend()
 plt.title('Test')
+plt.savefig('results/test_scaled.png')
 plt.show()
 
 
@@ -112,5 +114,8 @@ y_pred = dc(dummies[:, 0])
 plt.plot(y, label='Actual')
 plt.plot(y_pred, label='Predicted')
 plt.legend()
-plt.title('Test (Scaled)')
+plt.title('Test (Real Values)')
+
+plt.savefig('results/test_unscaled.png')
 plt.show()
+

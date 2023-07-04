@@ -21,13 +21,11 @@ with open('config.json') as f:
 
 hidden_size = config['hidden_size']
 num_layers = config['num_layers']
-
-
-with open('config.json') as f:
-    config = json.load(f)
-
 batch_size = config['batch_size']
 n_steps = config['lookback']
+percent_invested = config['percent_invested']
+principal = config['principal']
+
 
 model = LSTM2(1, hidden_size=hidden_size, num_layers=num_layers).to(device)
 
@@ -84,10 +82,8 @@ dummies = NVDA_Scaler.inverse_transform(dummies)
 
 y_pred = dc(dummies[:, 0])
 
-principal = 1000
 money = principal
 money_history = [money]
-percent_invested = 1
 
 for i in range(1, len(y)):
     if y_pred[i] > y[i-1]:
@@ -95,14 +91,25 @@ for i in range(1, len(y)):
     money_history.append(money)
 
 
-plt.plot(y, label='Actual')
-plt.plot(y_pred, label='Predicted')
-plt.legend()
-plt.title('Test (Scaled)')
-plt.show()
+# plt.plot(y, label='Actual')
+# plt.plot(y_pred, label='Predicted')
+# plt.legend()
+# plt.title('Test (Scaled)')
+
 
 print(((money-principal)/principal)*100, '%')
 
-plt.plot(money_history)
+plt.plot(money_history, label='Money')
+plt.plot(np.ones(len(money_history))*principal, label='Principal')
+plt.legend()
 plt.title('Money History')
+plt.savefig('results/simulation.png')
 plt.show()
+
+with open('results/final_stats.txt', 'w') as f:
+    f.write("Principal: " + str(principal))
+    f.write('\n')
+    f.write("Final: " + str(money))
+    f.write('\n')
+    f.write("Percent Increase: " + str(((money-principal)/principal)*100))
+    f.write('\n')

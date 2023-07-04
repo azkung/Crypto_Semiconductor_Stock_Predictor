@@ -12,5 +12,8 @@
     "hidden_size" : 2048,
     "num_layers" : 1,
 
+    "principal" : 1000,
+    "percent_invested" : 1,
+
     "weights" : ""
 }
