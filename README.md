@@ -16,9 +16,9 @@ The following repository is a time-series LSTM model that predicts the stock pri
 
 ## Installation
 
-'''bash
+```bash
 pip install -r requirements.txt
-'''
+```
 
 Must perform a local installation of pytorch
 
@@ -26,9 +26,9 @@ Must perform a local installation of pytorch
 
 Edit config file to change hyperparameters. Also add the nvidia and crypto data to the datasets folder. The format script uses the yahoo finance csv format.
 
-'''bash
+```bash
 python format.py
 python train.py
 python test.py
 python simulation.py
-'''
+```
