@@ -6,10 +6,10 @@ The following respository is a time-series LSTM model that predicts the stock pr
 
 ## Results
 
-![Train-results] (results/train_scaled.png)
+![Train-results] (https://github.com/azkung/Crypto_Semiconductor_Stock_Predictor/blob/main/results/train_scaled.png)
 
-![Test-results] (results/test_scaled.png)
+![Test-results] (https://github.com/azkung/Crypto_Semiconductor_Stock_Predictor/blob/main/results/test_scaled.png)
 
-![Predictions] (results/test_unscaled.png)
+![Predictions] (https://github.com/azkung/Crypto_Semiconductor_Stock_Predictor/blob/main/results/test_unscaled.png)
 
-![Simulation] (results/simulation.png)
+![Simulation] (https://github.com/azkung/Crypto_Semiconductor_Stock_Predictor/blob/main/results/simulation.png)
