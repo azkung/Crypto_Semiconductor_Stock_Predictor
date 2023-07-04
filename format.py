@@ -1,3 +1,7 @@
+# Description: This file formats the data into a format that can be used by the model.
+# The datasets folder should contain CSV files of the stock data (in the format of yahoo finance).
+# Written by: Alexander Kung
+
 import pandas as pd
 import json
 import torch
@@ -6,6 +10,7 @@ from sklearn.preprocessing import MinMaxScaler
 from copy import deepcopy as dc
 import numpy as np
 import joblib
+import os
 
 def main():
     
@@ -16,6 +21,11 @@ def main():
     n_steps = config['lookback']
     train_percent = config['train_percent']
 
+    if not os.path.exists('datasets'):
+        os.makedirs('datasets')
+    
+    if not os.path.exists('formatted'):
+        os.makedirs('formatted')
 
     df_BTC = pd.read_csv('datasets/BTC-USD.csv')
     df_NVDA = pd.read_csv('datasets/NVDA.csv')

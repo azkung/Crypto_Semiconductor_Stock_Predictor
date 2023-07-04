@@ -1,3 +1,6 @@
+# Description: Trains the model
+# Written by: Alexander Kung
+
 import torch
 import torch.nn as nn
 import pandas as pd

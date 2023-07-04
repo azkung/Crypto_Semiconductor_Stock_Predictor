@@ -1,3 +1,6 @@
+# Description: This file contains the model architecture for the LSTM model.
+# Written by: Alexander Kung
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

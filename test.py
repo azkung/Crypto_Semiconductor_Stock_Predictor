@@ -1,3 +1,6 @@
+# Description: Test the model on the test dataset
+# Written by: Alexander Kung
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

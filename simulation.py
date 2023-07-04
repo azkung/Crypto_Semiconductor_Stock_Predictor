@@ -1,3 +1,9 @@
+# Description: This file is used to simulate the trading of the model on the test set.
+# Trading is done by buying when the predicted price is higher than the previous day's 
+# price and selling when the predicted price is lower than the previous day's price.
+# The amount of money made is then calculated and plotted.
+# Written by: Alexander Kung
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -54,12 +60,6 @@ y = y.cpu().numpy()
 
 y_pred = y_pred.reshape(-1, 1)
 y = y.reshape(-1, 1)
-
-# plt.plot(y, label='Actual')
-# plt.plot(y_pred, label='Predicted')
-# plt.legend()
-# plt.title('Test')
-# plt.show()
 
 
 print(y_pred.shape)
