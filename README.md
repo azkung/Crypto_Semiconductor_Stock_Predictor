@@ -14,13 +14,6 @@ The following repository is a time-series LSTM model that predicts the stock pri
 
 ![Simulation](https://github.com/azkung/Crypto_Semiconductor_Stock_Predictor/blob/main/results/simulation.png)
 
-### Simulation Statistics
-
-- Starting Principal: $1000
-- Final Value: $2331.39
-- Total Return: 133.14%
-- Time Period: 186 Business Days (Start of 2023 to the middle of 2023)
-
 ## Installation
 
 ```bash
